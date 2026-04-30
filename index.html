@@ -1727,8 +1727,25 @@
                 return;
             }
             
+            // Mapeo de imágenes específicas por plantel
+            const imagenesPlanteles = {
+                'CECATI 31': 'C31.jpeg',
+                'CECATI 33': 'C33.jpeg',
+                'CECATI 42': 'C42.jpeg',
+                'CECATI 49': 'C49.jpeg',
+                'CECATI 72': 'C72.jpeg',
+                'CECATI 103': 'C103.jpeg',
+                'CECATI 151': 'C151.jpeg',
+                'CECATI 159': 'C159.jpeg',
+                'CECATI 168': 'C168.jpeg',
+                'CECATI 170': 'C170.jpeg'
+            };
+            
+            const imagenPlantel = imagenesPlanteles[plantelNombre] || 'cecatin.png';
+            
             let html = `
                 <div style="text-align: center; margin-bottom: 30px;">
+                    <img src="imagenes/${imagenPlantel}" alt="${plantelNombre}" style="width: 70%; height: auto; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                     <h1 style="color: #691c32; font-size: 2.5em; margin-bottom: 10px;">📘 ${plantelNombre}</h1>
                     <div style="border-bottom: 3px solid #FFD700; width: 100px; margin: 0 auto;"></div>
                 </div>
