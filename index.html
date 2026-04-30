@@ -1484,6 +1484,9 @@
             document.getElementById("especialidades-contenido").style.display = "none";
             document.getElementById("plantel-info").style.display = "none";
             document.getElementById("requisitos-inscripcion").style.display = "block";
+            
+            // Desplazar hacia arriba
+            window.scrollTo(0, 0);
         }
         
         function mostrarEspecialidades() {
@@ -1491,6 +1494,9 @@
             document.getElementById("requisitos-inscripcion").style.display = "none";
             document.getElementById("plantel-info").style.display = "none";
             document.getElementById("especialidades-contenido").style.display = "block";
+            
+            // Desplazar hacia arriba
+            window.scrollTo(0, 0);
         }
         
         function togglePlanteles(plantelesId) {
@@ -1727,6 +1733,9 @@
                 return;
             }
             
+            // Desplazar hacia arriba
+            window.scrollTo(0, 0);
+            
             // Mapeo de imágenes específicas por plantel
             const imagenesPlanteles = {
                 'CECATI 31': 'C31.jpeg',
@@ -1746,7 +1755,10 @@
             let html = `
                 <div style="text-align: center; margin-bottom: 30px;">
                     <img src="imagenes/${imagenPlantel}" alt="${plantelNombre}" style="width: 70%; height: auto; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                    <h1 style="color: #691c32; font-size: 2.5em; margin-bottom: 10px;">📘 ${plantelNombre}</h1>
+                    <h1 style="color: #691c32; font-size: 2.5em; margin-bottom: 10px;">
+                        <img src="imagenes/cecatin.png" alt="CECATI" style="width: 72px; height: 101px; margin-right: 15px; vertical-align: middle">
+                        ${plantelNombre}
+                    </h1>
                     <div style="border-bottom: 3px solid #FFD700; width: 100px; margin: 0 auto;"></div>
                 </div>
                 
@@ -1835,12 +1847,81 @@
                 return;
             }
             
+            // Desplazar hacia arriba
+            window.scrollTo(0, 0);
+            
+            // Mapeo de imágenes específicas por especialidad para agregar imagen a las especaialidades
+            const imagenesEspecialidades = {
+                'Administración': 'administracion.png',
+                'Alimentos y bebidas': 'alimentos.png',
+                'Alimentos y Bebidas': 'alimentos.png',
+                'Aplicación de normas y proced.contables y fiscales': 'contabilidad.png',
+                'Aplicación de Normas y Procedimientos Contables y Fiscales': 'contabilidad.png',
+                'Artes gráficas': 'graficas.png',
+                'Artes Gráficas': 'graficas.png',
+                'Artesanías con fibras textiles': 'textil.png',
+                'Artesanías con Fibras Textiles': 'textil.png',
+                'Artesanías con pastas, pinturas y acabados': 'pinturas.png',
+                'Artesanías con Pastas, Pinturas y Acabados': 'pinturas.png',
+                'Artesanías metálicas': 'metalicas.png',
+                'Elaboración y restauración de artesanías de madera': 'artesanias.png',
+                'Asistencia educativa inicial y preescolar': 'educativa.png',
+                'Asistencia ejecutiva': 'administracion.png',
+                'Asistencia Ejecutiva': 'administracion.png',
+                'Atención integral a personas adultas mayores': 'adultos.png',
+                'Atención integral a personas con discapacidad': 'discapacidad.png',
+                'Auxiliar de enfermería': 'enfermeria.png',
+                'Confección de prendas de vestir': 'confeccion.png',
+                'Confección de Prendas de Vestir': 'confeccion.png',
+                'Cuidados cosmetológicos faciales y corporales': 'cosmetologia.png',
+                'Cosmetología Integral': 'cosmetologia.png',
+                'Diseño e imagen de la carrocería': 'carroceria.png',
+                'Diseño de moda': 'moda.png',
+                'Diseño de Moda': 'moda.png',
+                'Diseño y fabricación de muebles de madera': 'muebles.png',
+                'Diseño y Fabricación de Muebles de Madera': 'muebles.png',
+                'Elaboración de dibujos arquitectónico e industrial': 'dibujo.png',
+                'Elaboración de Dibujos Arquitectónico e Industrial': 'dibujo.png',
+                'Elaboración y restauración de artesanías de madera': 'artesanias.png',
+                'Estilismo y diseño de imagen': 'estilismo.png',
+                'Estilismo y Diseño de Imagen': 'estilismo.png',
+                'Expresión gráfica digital': 'expresion.png',
+                'Electricidad': 'electrica.png',
+                'Electrónica': 'electronica.png',
+                'Gestión y venta de servicios turísticos': 'turismo.png',
+                'Gestión y Venta de Servicios Turísticos': 'turismo.png',
+                'Hotelería': 'hoteleria.png',
+                'Informática': 'informatica.png',
+                'Inglés': 'ingles.png',
+                'Mantenimiento al sistema electrónico automotriz': 'electronico.png',
+                'Mantenimiento al Sistema Electrónico Automotriz': 'electronico.png',
+                'Mantenimiento al Sistema Eléctrico Automotriz': 'electrica.png',
+                'Mantenimiento electromecánico del automóvil': 'electromecanico.png',
+                'Mantenimiento Electromecánico del Automóvil': 'electromecanico.png',
+                'Máquinas-Herramienta': 'maquinas.png',
+                'Mecánica diésel': 'diesel.png',
+                'Mecánica Diésel': 'diesel.png',
+                'Refrigeración y aire acondicionado': 'refri.png',
+                'Refrigeración y Aire Acondicionado': 'refri.png',
+                'Sastrería': 'sastre.png',
+                'Soldadura y pailería': 'soldadura.png',
+                'Soldadura y Pailería': 'soldadura.png',
+                'Soporte a instalac. eléctricas y motores eléctricos': 'electrica.png',
+                'Soporte técnico a equipos y sistemas computacionales': 'soporte.png',
+                'Soporte Técnico a Equipos y Sistemas Computacionales': 'soporte.png'
+            };
+            
+            let imagenEspecialidad = imagenesEspecialidades[nombreEspecialidad] || 'cecatin.png';
+            
             // Obtener información de la especialidad desde la base de datos
             const infoEspecialidad = obtenerInfoEspecialidad(nombreEspecialidad);
             
             let html = `
                 <div style="text-align: center; margin-bottom: 30px;">
-                    <h1 style="color: #691c32; font-size: 2.5em; margin-bottom: 10px;">📚 ${nombreEspecialidad}</h1>
+                    <h1 style="color: #691c32; font-size: 2.5em; margin-bottom: 10px;">
+                        <img src="imagenes/${imagenEspecialidad}" alt="${nombreEspecialidad}" style="width: 50px; height: 50px; margin-right: 15px; vertical-align: middle; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        ${nombreEspecialidad}
+                    </h1>
                     <div style="border-bottom: 3px solid #FFD700; width: 100px; margin: 0 auto;"></div>
                 </div>
                 
