@@ -1274,6 +1274,18 @@
                         <div class="plantel-item"><strong>CECATI 170</strong><br>Orizaba</div>
                     </div>
                 </div>
+
+                <div class="especialidad-item">
+                    <img src="imagenes/ingles.png" alt="ingles" class="especialidad-imagen" onclick="togglePlanteles('planteles-ingles')" style="cursor: pointer;">
+                    <div class="especialidad-header" onclick="togglePlanteles('planteles-ingles')">
+                        <h3>Inglés</h3>
+                    </div>
+                    <div id="planteles-ingles" class="planteles-list" style="display: none;">
+                        <div class="plantel-item"><strong>CECATI 42</strong><br>Veracruz</div>
+                        <div class="plantel-item"><strong>CECATI 151</strong><br>Xalapa</div>
+                        <div class="plantel-item"><strong>CECATI 168</strong><br>Camerino Z. Mendoza</div>
+                    </div>
+                </div>
                 
                 <div class="especialidad-item">
                     <img src="imagenes/electronico.png" alt="Mantenimiento al sistema electrónico automotriz" class="especialidad-imagen" onclick="togglePlanteles('planteles-mantenimiento-electronico')" style="cursor: pointer;">
@@ -1393,18 +1405,6 @@
                         <h3>Soporte técnico a equipos y sistemas computacionales</h3>
                     </div>
                     <div id="planteles-soporte-computacionales" class="planteles-list" style="display: none;">
-                        <div class="plantel-item"><strong>CECATI 42</strong><br>Veracruz</div>
-                        <div class="plantel-item"><strong>CECATI 151</strong><br>Xalapa</div>
-                        <div class="plantel-item"><strong>CECATI 168</strong><br>Camerino Z. Mendoza</div>
-                    </div>
-                </div>
-                
-                <div class="especialidad-item">
-                    <img src="imagenes/ingles.png" alt="Uso de la Lengua inglesa en diversos contextos" class="especialidad-imagen" onclick="togglePlanteles('planteles-ingles')" style="cursor: pointer;">
-                    <div class="especialidad-header" onclick="togglePlanteles('planteles-ingles')">
-                        <h3>Uso de la Lengua inglesa en diversos contextos</h3>
-                    </div>
-                    <div id="planteles-ingles" class="planteles-list" style="display: none;">
                         <div class="plantel-item"><strong>CECATI 42</strong><br>Veracruz</div>
                         <div class="plantel-item"><strong>CECATI 151</strong><br>Xalapa</div>
                         <div class="plantel-item"><strong>CECATI 168</strong><br>Camerino Z. Mendoza</div>
@@ -1552,6 +1552,7 @@
             { nombre: "Gestión y venta de servicios turísticos", id: "planteles-gestion-turismo" },
             { nombre: "Hotelería", id: "planteles-hoteleria" },
             { nombre: "Informática", id: "planteles-informatica" },
+            { nombre: "Inglés", id: "planteles-ingles" },
             { nombre: "Mantenimiento al sistema electrónico automotriz", id: "planteles-mantenimiento-electronico" },
             { nombre: "Mantenimiento electromecánico del automóvil", id: "planteles-mantenimiento-electromecanico" },
             { nombre: "Máquinas-Herramienta", id: "planteles-maquinas-herramienta" },
@@ -1561,7 +1562,6 @@
             { nombre: "Soldadura y pailería", id: "planteles-soldadura-paileria" },
             { nombre: "Soporte a instalac. eléctricas y motores eléctricos", id: "planteles-soporte-electricos" },
             { nombre: "Soporte técnico a equipos y sistemas computacionales", id: "planteles-soporte-computacionales" },
-            { nombre: "Uso de la Lengua inglesa en diversos contextos", id: "planteles-ingles" }
         ];
         
         let searchTimeout;
