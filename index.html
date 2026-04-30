@@ -1483,7 +1483,17 @@
             // Ocultar otros contenidos
             document.getElementById("especialidades-contenido").style.display = "none";
             document.getElementById("plantel-info").style.display = "none";
+            document.getElementById("especialidad-info").style.display = "none";
             document.getElementById("requisitos-inscripcion").style.display = "block";
+            
+            // Limpiar selección de especialidad previa
+            document.getElementById("especialidad-detalle").innerHTML = '';
+            
+            // Quitar la selección visual de la lista de especialidades
+            const especialidadesSeleccionadas = document.querySelectorAll('.especialidad-item.activa');
+            especialidadesSeleccionadas.forEach(item => {
+                item.classList.remove('activa');
+            });
             
             // Desplazar hacia arriba
             window.scrollTo(0, 0);
@@ -1493,7 +1503,17 @@
             // Ocultar otros contenidos
             document.getElementById("requisitos-inscripcion").style.display = "none";
             document.getElementById("plantel-info").style.display = "none";
+            document.getElementById("especialidad-info").style.display = "none";
             document.getElementById("especialidades-contenido").style.display = "block";
+            
+            // Limpiar selección de especialidad previa
+            document.getElementById("especialidad-detalle").innerHTML = '';
+            
+            // Quitar la selección visual de la lista de especialidades
+            const especialidadesSeleccionadas = document.querySelectorAll('.especialidad-item.activa');
+            especialidadesSeleccionadas.forEach(item => {
+                item.classList.remove('activa');
+            });
             
             // Desplazar hacia arriba
             window.scrollTo(0, 0);
@@ -1676,6 +1696,20 @@
             searchTimeout = setTimeout(() => {
                 buscarEspecialidades(query);
             }, 300);
+
+            //Limpia la especialidad previamente seleccionada
+            const contenedorTarjeta = document.getElementById('id-del-contenedor-de-la-tarjeta'); 
+            // Reemplaza con ID o Clase
+            if (contenedorTarjeta) {
+                contenedorTarjeta.innerHTML = ''; 
+            }
+
+            // Quita la selección visual de la lista de especialidades
+            const especialidadesSeleccionadas = document.querySelectorAll('.especialidad-item.activa');
+            especialidadesSeleccionadas.forEach(item => {
+                item.classList.remove('activa'); 
+            // Ajusta la clase usada para marcarla como seleccionada
+            });
         });
         
         searchInput.addEventListener('keypress', function(e) {
@@ -1724,6 +1758,16 @@
             document.getElementById("contenido-principal").style.display = "none";
             document.getElementById("especialidades-contenido").style.display = "none";
             document.getElementById("requisitos-inscripcion").style.display = "none";
+            document.getElementById("especialidad-info").style.display = "none";
+            
+            // Limpiar selección de especialidad previa
+            document.getElementById("especialidad-detalle").innerHTML = '';
+            
+            // Quitar la selección visual de la lista de especialidades
+            const especialidadesSeleccionadas = document.querySelectorAll('.especialidad-item.activa');
+            especialidadesSeleccionadas.forEach(item => {
+                item.classList.remove('activa');
+            });
             
             // Mostrar información del plantel
             const plantelDetalle = document.getElementById("plantel-detalle");
@@ -2560,7 +2604,7 @@
                 console.log('Asignando eventos...');
                 
                 // Buscar todos los enlaces en el menú PLANTELES
-                const menuLinks = document.querySelectorAll('.dropdown-menu a[href="#"]');
+                const menuLinks = document.querySelectorAll('.nav-main a');
                 console.log('Enlaces encontrados:', menuLinks.length);
                 
                 menuLinks.forEach((link, i) => {
@@ -2589,6 +2633,13 @@
                             }
                         };
                         link.addEventListener('click', link._plantelClickHandler);
+
+                        // AGREGAR: Ocultar o limpiar la tarjeta de especialidad al salir de la vista principal
+                        const contenedorTarjeta = document.querySelector('.clase-de-tu-tarjeta-especialidad');
+                        if (contenedorTarjeta) {
+                            contenedorTarjeta.style.display = 'none'; 
+                            // o eliminar su contenido
+                        }
                     }
                 });
                 
